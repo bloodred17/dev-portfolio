@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "variables";
+
+#career.dark {
+  background-image: linear-gradient(90deg, $grid-background-color-dark 0, $grid-background-color-dark $grid-width - 1, $grid-line-color-dark $grid-width);
+}
+#career.light {
+  background-image: linear-gradient(90deg, $grid-background-color-light 0, $grid-background-color-light $grid-width - 1, $grid-line-color-light $grid-width);
+}
