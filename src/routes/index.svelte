@@ -13,19 +13,17 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Ankur Dutta | WebDev</title>
 </svelte:head>
 
 <section class="min-h-screen bg-white dark:bg-slate-800">
-	<div class="sticky top-0 z-10">
-		<Navbar/>
-	</div>
+	<Navbar/>
 	<Intro/>
 	<Skills/>
 	<Projects/>
 	<WorkEducation/>
 	<Contact/>
+	<Footer/>
 </section>
-<Footer/>
 
 

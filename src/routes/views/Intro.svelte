@@ -18,7 +18,7 @@ import HighlightText from '../shared/HighlightText.svelte';
 		</div>
 	</div>
 
-	<div class="w-full lg:w-1/2" style="height: 90vh;">
+	<div class="hidden sm:block w-full lg:w-1/2" style="height: 90vh;">
 		<div class="w-full h-full bg-cover"
 		     style="background-image: url(https://images.unsplash.com/photo-1508394522741-82ac9c15ba69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=748&q=80)">
 		</div>

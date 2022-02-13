@@ -1,4 +1,4 @@
-<section id="skills" class="container px-6 py-32 mx-auto text-center bg-slate-100 dark:bg-slate-700">
+<section id="skills" class="px-6 py-10 md:py-32 mx-auto text-center bg-slate-100 dark:bg-slate-700">
 	<div class="max-w-lg mx-auto">
 		<h1 class="text-xl text-gray-800 dark:text-white md:text-2xl">My Stack</h1>
 

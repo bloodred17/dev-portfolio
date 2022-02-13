@@ -17,12 +17,14 @@
 
 	let selected = 0;
 	function selectLink(index: number) {
+		mobileMenu = false;
 		selected = index;
 	}
 	// $: {console.log(selected)}
 
 	let body;
 	let career;
+	let mobileMenu = false;
 
 	onMount(() => {
 		body = document.querySelector('body');
@@ -63,8 +65,9 @@
 	}
 </script>
 
-<nav class="container px-6 py-2 mx-auto lg:flex lg:justify-between lg:items-center backdrop-blur-md
-bg-white/80 dark:bg-slate-900/80
+<nav class="px-6 py-2 lg:flex md:justify-between lg:items-center backdrop-blur-md
+bg-white/80 dark:bg-slate-900/80 w-full
+sticky top-0 z-10
 ">
 	<div class="flex items-center justify-between">
 		<div>
@@ -76,6 +79,7 @@ bg-white/80 dark:bg-slate-900/80
 		<!-- Mobile menu button -->
 		<div class="flex lg:hidden">
 			<button type="button"
+			        on:click={() => mobileMenu = !mobileMenu}
 			        class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
 			        aria-label="toggle menu">
 				<svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
@@ -88,24 +92,27 @@ bg-white/80 dark:bg-slate-900/80
 	</div>
 
 	<!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-	<div class="flex flex-col mt-4 space-y-2 lg:mt-0 lg:flex-row lg:-mx-6 lg:space-y-0">
+	<div class="{!mobileMenu ? 'hidden' : 'block'} lg:flex flex-col mt-4 space-y-2 lg:mt-0 lg:flex-row lg:-mx-6 lg:space-y-0">
 		{#each routes as route, index}
 			{#if route}
 				<a href={route.link}
 				   on:click={() => selectLink(index)}
 				   class:border-blue-500={selected === index}
 				   class:border-transparent={selected !== index}
-				   class="text-gray-800 transition-colors duration-150 transform dark:text-gray-200
+				   class="block text-gray-800 transition-colors duration-150 transform dark:text-gray-200
 				   border-b-2 hover:border-pink-500
 				   mx-1.5 sm:mx-6">{route.name}</a>
 			{/if}
 		{/each}
 	</div>
 
-	<button class="block h-10 px-5 py-2 mt-4 text-sm text-center text-gray-700 capitalize transition-colors duration-200 transform border rounded-md
+	<button
+    class:hidden={!mobileMenu}
+		class="lg:block h-10 px-5 py-2 mt-4 text-sm text-center text-gray-700 capitalize transition-colors duration-200 transform border rounded-md
 	lg:mt-0 hover:bg-gray-100 lg:w-auto
 	dark:hover:bg-gray-700 dark:text-white
-	" on:click={() => toggleTheme(themeMode)}>
+	"
+    on:click={() => toggleTheme(themeMode)}>
 		{#if themeMode === 'dark'}
 			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
 		{:else}
