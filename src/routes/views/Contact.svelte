@@ -24,7 +24,7 @@ import Social from '../shared/Social.svelte';
 				</div>
 			</div>
 
-			<div class="mt-8 md:w-1/2">
+			<div class="mt-8 lg:mt-0 md:w-1/2">
 				<div class="flex justify-center overflow-x-auto">
 					<div class="max-w-lg">
 						<iframe title="Bangalore"
