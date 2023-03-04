@@ -39,5 +39,11 @@
   "dependencies": {
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.1"
+  },
+  "engines": {
+    "node": ">=16.14"
+  },
+  "volta": {
+    "node": "16.14.2"
   }
 }
